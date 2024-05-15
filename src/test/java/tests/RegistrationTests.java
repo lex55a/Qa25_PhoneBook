@@ -37,8 +37,10 @@ public class RegistrationTests extends TestBase {
                 .setPassword("Ssnow123456$");
 
         app.getHelperUser().openLoginRegistrationForm();
-        app.getHelperUser().fillLoginRegistrationForm(user);
+        app.getHelperUser().submitRegistration();
+        app.getHelperUser().fillRegistrationForm(user);
         app.getHelperUser().submit();
     }
+
 
 }

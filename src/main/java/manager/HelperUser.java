@@ -44,18 +44,21 @@ public class HelperUser extends HelperBase {
     public void logout() {
         click(By.xpath("//button[text()='Sign Out']"));
     }
-    
 
-    public void submit() {
-        click(By.xpath("//button[normalize-space()='Registration']"));
+
+    public void submitRegistration(){
+        click(By.xpath("//button[text()='Registration']"));
     }
 
 
-    public void fillLoginRegistrationForm(User user) {
+    public void fillRegistrationForm(User user) {
         type(By.id("name"),user.getFirstName());
         type(By.id("lastName"),user.getLastName());
         type(By.id("email"),user.getEmail());
         type(By.id("password"),user.getPassword());
+    }
+    public void submit() {
+        click(By.xpath("//button[@type='submit']"));
     }
 
 }
