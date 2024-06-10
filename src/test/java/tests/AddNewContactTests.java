@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class AddNewContactTests extends TestBase{
 
-    @BeforeClass
+    @BeforeClass(alwaysRun = true)
     public void preCondition(){
 
         if (!app.getHelperUser().isLogged()){
@@ -19,7 +19,7 @@ public class AddNewContactTests extends TestBase{
 
     }
 
-    @Test(dataProvider = "contactSuccess", dataProviderClass = DataProviderContacts.class)
+    @Test(dataProvider = "contactSuccess", dataProviderClass = DataProviderContacts.class, invocationCount = 3)
     public void addContactSuccessAllFields(Contact contact) {
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
 
@@ -48,7 +48,7 @@ public class AddNewContactTests extends TestBase{
     }
 
 
-    @Test
+    @Test(groups = {"smoke","regress","retest"})
     public void addContactSuccessReqFields(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
         Contact contact = Contact.builder()
