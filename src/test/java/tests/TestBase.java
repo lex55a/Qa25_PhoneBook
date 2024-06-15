@@ -22,7 +22,7 @@ public class TestBase {
         logger.info("Name of method -->"+m.getName());
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void end(){
         logger.info("********************************************************");
     }
