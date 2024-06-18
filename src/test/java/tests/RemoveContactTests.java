@@ -22,6 +22,7 @@ public class RemoveContactTests extends TestBase{
     public void removeFirstContact(){
         //Assert size of ContactList less by one
         Assert.assertEquals(app.getHelperContact().removeOneContact(),1);
+
     }
 
     @Test
